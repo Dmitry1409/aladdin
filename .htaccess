@@ -1,0 +1,33 @@
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^aladdin-nn\.ru$ [NC]
+RewriteRule ^(.*)$ http://www.aladdin-nn.ru/$1 [R=301,L]
+
+# Bad Rquest
+ErrorDocument 400 /index.html
+# Authorization Required
+ErrorDocument 401 /index.html
+# Forbidden
+ErrorDocument 403 /index.html
+# Not found
+ErrorDocument 404 /index.html
+# Method Not Allowed
+ErrorDocument 405 /index.html
+# Request Timed Out
+ErrorDocument 408 /index.html
+# Request URI Too Long
+ErrorDocument 414 /index.html
+# Internal Server Error
+ErrorDocument 500 /index.html
+# Not Implemented
+ErrorDocument 501 /index.html
+# Bad Gateway 
+ErrorDocument 502 /index.html
+# Service Unavailable 
+ErrorDocument 503 /index.html
+# Gateway Timeout
+ErrorDocument 504 /index.html

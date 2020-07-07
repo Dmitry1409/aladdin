@@ -1,0 +1,2 @@
+Host: aladdin-nn.ru
+Sitemap: http://aladdin-nn.ru/sitemap.xml
